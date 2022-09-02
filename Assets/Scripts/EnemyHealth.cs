@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     {
         hitPoints -= damage;
         print(hitPoints);
-        if(hitPoints <= Mathf.Epsilon)
+        if(hitPoints <= 0)
         {
             Die();
         }

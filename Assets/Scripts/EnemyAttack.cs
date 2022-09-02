@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    PlayerHealth target;
     [SerializeField] float smackInAHead = 40f;
 
     PlayerHealth playerHealth;
 
     private void Awake() 
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();    
+        target = FindObjectOfType<PlayerHealth>();    
     }
 
     public void AttackHitEvent()
     {
         if(target == null) { return; }
-        target.GetComponent<PlayerHealth>().TakeDamage(smackInAHead);
+        target.TakeDamage(smackInAHead);
     }
 }
