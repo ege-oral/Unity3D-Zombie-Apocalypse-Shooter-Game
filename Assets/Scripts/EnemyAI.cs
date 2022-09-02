@@ -13,9 +13,12 @@ public class EnemyAI : MonoBehaviour
 
     bool isProvoked = false;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -50,11 +53,14 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseTarget()
     {
+        animator.SetBool("attack", false);
+        animator.SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
+        animator.SetBool("attack", true);
         print("attack" + target.name);
     }
 

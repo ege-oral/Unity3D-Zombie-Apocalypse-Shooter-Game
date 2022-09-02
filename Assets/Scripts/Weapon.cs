@@ -8,9 +8,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
+    [SerializeField] GameObject hitEffect;
 
     [SerializeField] ParticleSystem fireVFX;
-
+ 
     private void Update() 
     {
         if(Input.GetButtonDown("Fire1"))
@@ -30,12 +31,12 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
-            Debug.Log("I hit this thig: " + hit.transform.name);
             if(hit.transform.tag.Equals("Enemy"))
             {
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 target.TakeDamage(damage);
             }
+            CreateHitImpact(hit);
                 
         }
         else
@@ -47,5 +48,11 @@ public class Weapon : MonoBehaviour
     private void PlayFireVFX()
     {
         fireVFX.Play();
+    }
+
+    private void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, 0.1f);
     }
 }
