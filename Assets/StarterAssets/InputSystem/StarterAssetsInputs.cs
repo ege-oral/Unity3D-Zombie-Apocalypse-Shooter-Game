@@ -44,10 +44,6 @@ namespace StarterAssets
 			SprintInput(value.isPressed);
 		}
 
-		public void OnFire()
-		{
-			Debug.Log("fire");
-		}
 #endif
 
 
