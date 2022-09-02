@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
 
+    [SerializeField] ParticleSystem fireVFX;
+
     private void Update() 
     {
         if(Input.GetButtonDown("Fire1"))
@@ -18,6 +20,12 @@ public class Weapon : MonoBehaviour
     }
 
     private void Shoot()
+    {
+        PlayFireVFX();
+        ProcessRaycast();
+    }
+
+    private void ProcessRaycast()
     {
         RaycastHit hit;
         if(Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
@@ -34,5 +42,10 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+    }
+    
+    private void PlayFireVFX()
+    {
+        fireVFX.Play();
     }
 }
