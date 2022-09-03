@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 28f4ccd96c28b234fb58b2008b2f02b5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Zombie
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5032afc24daf4b64aa6b48457fe255ee, type: 3}
+  - {fileID: 12800000, guid: c7a0d96c9cd7865429b3e83d8f12cb01, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
