@@ -6,6 +6,18 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float playerHitPoint = 100f;
 
+
+    private void Update() 
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            {
+                Debug.Log(mousePos.x);
+                Debug.Log(mousePos.y);
+            }
+        }    
+    }
     public void TakeDamage(float damage)
     {
         playerHitPoint -= damage;
@@ -20,5 +32,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player is DEAD");
     }
+
+
 
 }
