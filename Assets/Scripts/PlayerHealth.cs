@@ -12,16 +12,15 @@ public class PlayerHealth : MonoBehaviour
         playerHitPoint -= damage;
         print(playerHitPoint);
         isPlayerDead();
-    }
     
 
-    public bool isPlayerDead()
+    }
+    private void isPlayerDead()
     {
         if(playerHitPoint <= 0)
         {
-            return true;
+            GetComponent<DeathHandler>().HandleDeath();
         }
-        return false;
     }
 
 
