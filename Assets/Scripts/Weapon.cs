@@ -11,21 +11,27 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject hitEffect;
     [SerializeField] ParticleSystem fireVFX;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] float timeBetweenShots = 0.5f;
+
+    bool canShoot = true;
 
     private void Update() 
     {
-        if(Input.GetButtonDown("Fire1") && ammoSlot.GetCurrentAmmo() > 0)
+        if(Input.GetMouseButtonDown(0) && ammoSlot.GetCurrentAmmo() > 0 && canShoot)
         {
-            Shoot();
+            StartCoroutine(Shoot());
             ammoSlot.ReduceCurrentAmmo();
             print(ammoSlot.GetCurrentAmmo());
         }    
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
+        canShoot = false;
         PlayFireVFX();
         ProcessRaycast();
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
 
     private void ProcessRaycast()

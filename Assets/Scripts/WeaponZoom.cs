@@ -7,10 +7,10 @@ using StarterAssets;
 public class WeaponZoom : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera followCamera;
+    [SerializeField] FirstPersonController firstPersonController;
     [SerializeField] float zoomedOutFOV = 40f;
     [SerializeField] float zoomedInFOV = 20f;
 
-    FirstPersonController firstPersonController;
 
     [SerializeField] float zoomedOutSensitivity = 1f;
     [SerializeField] float zoomedInSensitivity = 0.4f;
@@ -18,15 +18,10 @@ public class WeaponZoom : MonoBehaviour
 
     bool zoom = false;
     
-    private void Start() 
-    {
-        firstPersonController = GetComponent<FirstPersonController>();    
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire2"))
+        if(Input.GetMouseButtonDown(1))
         {
             zoom = !zoom;
             if(zoom)

@@ -275,7 +275,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829597508155286}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -353,8 +353,9 @@ MonoBehaviour:
   FPCamera: {fileID: 0}
   range: 100
   damage: 30
-  hitEffect: {fileID: 0}
-  fireVFX: {fileID: 0}
+  hitEffect: {fileID: 5979581992316524530}
+  fireVFX: {fileID: 1231150744450473453}
+  ammoSlot: {fileID: 0}
 --- !u!1001 &1371111272021250530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,6 +416,11 @@ PrefabInstance:
 --- !u!4 &5975968057315277128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4749552848369871018, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
+  m_PrefabInstance: {fileID: 1371111272021250530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5979581992316524530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4754838360483497488, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
   m_PrefabInstance: {fileID: 1371111272021250530}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2539337136768912561
@@ -481,5 +487,10 @@ PrefabInstance:
 --- !u!4 &954837479879768738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+  m_PrefabInstance: {fileID: 2539337136768912561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1231150744450473453 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
   m_PrefabInstance: {fileID: 2539337136768912561}
   m_PrefabAsset: {fileID: 0}
