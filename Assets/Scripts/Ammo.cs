@@ -13,11 +13,12 @@ public class Ammo : MonoBehaviour
         public int ammoAmount;
     }
 
+    // Players Current Ammo Function
     public int GetCurrentAmmo(AmmoType ammoType)
     {
         return GetAmmoSlot(ammoType).ammoAmount;
     }
-
+    // Reduce Current Ammo
     public void ReduceCurrentAmmo(AmmoType ammoType)
     {
         GetAmmoSlot(ammoType).ammoAmount -= 1;
