@@ -18,7 +18,12 @@ public class WeaponZoom : MonoBehaviour
 
     bool zoom = false;
     
-    // Update is called once per frame
+    private void OnDisable() 
+    {
+        ZoomOut();
+        zoom = false;
+    }
+
     void Update()
     {
         if(Input.GetMouseButtonDown(1))
@@ -26,15 +31,24 @@ public class WeaponZoom : MonoBehaviour
             zoom = !zoom;
             if(zoom)
             {
-                followCamera.m_Lens.FieldOfView = zoomedInFOV;
-                firstPersonController.RotationSpeed = zoomedInSensitivity;
+                ZoomIn();
             }
             else
             {
-                followCamera.m_Lens.FieldOfView = zoomedOutFOV;
-                firstPersonController.RotationSpeed = zoomedOutSensitivity;
+                ZoomOut();
             }
-                
         }
+    }
+
+    private void ZoomIn()
+    {
+        followCamera.m_Lens.FieldOfView = zoomedInFOV;
+        firstPersonController.RotationSpeed = zoomedInSensitivity;
+    }
+
+    private void ZoomOut()
+    {
+        followCamera.m_Lens.FieldOfView = zoomedOutFOV;
+        firstPersonController.RotationSpeed = zoomedOutSensitivity;
     }
 }
