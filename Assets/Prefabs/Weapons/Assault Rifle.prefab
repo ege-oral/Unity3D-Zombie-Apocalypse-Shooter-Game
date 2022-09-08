@@ -104,11 +104,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
-  range: 100
+  range: 35
   damage: 30
   hitEffect: {fileID: 3793315183827100019}
   fireVFX: {fileID: 8756642488371977500}
   ammoSlot: {fileID: 0}
+  timeBetweenShots: 0.1
 --- !u!1 &1426050648627750
 GameObject:
   m_ObjectHideFlags: 0

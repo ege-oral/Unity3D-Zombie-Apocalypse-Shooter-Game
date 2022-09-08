@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7041978908423603256, guid: d4f6cd6e25c23b84ab7d3b9f85adfcb8, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 135756641613574979}
     - target: {fileID: 7041978908423603257, guid: d4f6cd6e25c23b84ab7d3b9f85adfcb8, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -1702,21 +1706,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 604049465, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: followCamera
-      value: 
-      objectReference: {fileID: 1644915906}
-    - target: {fileID: 1905518810, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: followCamera
-      value: 
-      objectReference: {fileID: 1644915906}
+    - target: {fileID: 247381541, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: currentWeapon
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 135756641613574984, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1272295891}
+    - target: {fileID: 3636679818509827490, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Name
+      value: Assault Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636679818509827490, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332506360282361992, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: followCamera
+      value: 
+      objectReference: {fileID: 1644915906}
+    - target: {fileID: 5332506361550260331, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: followCamera
+      value: 
+      objectReference: {fileID: 1644915906}
+    - target: {fileID: 5394442228027710010, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815845275650902410, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_RootOrder
