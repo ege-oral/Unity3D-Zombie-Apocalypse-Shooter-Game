@@ -18,6 +18,8 @@ public class DeathHandler : MonoBehaviour
     {
         gameOverCanvas.enabled = true;
         Time.timeScale = 0;
+        FindObjectOfType<WeaponSwitcher>().enabled = false;
+
         // Free the cursor if player dies.
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
