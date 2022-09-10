@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     PlayerHealth target;
-    [SerializeField] float smackInAHead = 40f;
+    [SerializeField] float smackInAHead = 20f;
 
     PlayerHealth playerHealth;
 

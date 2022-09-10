@@ -390,7 +390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae78335b006ea24e937c81b94906912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 100
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 50
+  - ammoType: 1
+    ammoAmount: 25
 --- !u!1001 &5332506359678443697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483801329399195963, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: range
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3483801329399195963, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: ammoSlot
@@ -435,12 +439,24 @@ PrefabInstance:
       value: 0.597
       objectReference: {fileID: 0}
     - target: {fileID: 5653471473452298685, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653471473452298685, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 135756641613574990}
+    - target: {fileID: 5653471473452298685, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680911821570907411, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: m_Name
+      value: Assault Rifle
+      objectReference: {fileID: 0}
     - target: {fileID: 8680911821570907411, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_RootOrder
