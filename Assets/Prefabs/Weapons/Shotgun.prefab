@@ -106,7 +106,8 @@ MonoBehaviour:
   hitEffect: {fileID: 2370505747532253402}
   fireVFX: {fileID: 4377924392706921501}
   ammoSlot: {fileID: 0}
-  timeBetweenShots: 2
+  ammoType: 0
+  timeBetweenShots: 1
 --- !u!1 &1326079549577358
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,11 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.061
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.363
+      value: -0.462
       objectReference: {fileID: 0}
     - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
       propertyPath: m_LocalRotation.w
@@ -331,6 +332,14 @@ PrefabInstance:
     - target: {fileID: 3360542172024696037, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
       propertyPath: m_Name
       value: Muzzle Flash
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
@@ -398,6 +407,22 @@ PrefabInstance:
     - target: {fileID: 4754838360483497488, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
       propertyPath: m_Name
       value: Hit Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8756069232075175792, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -1.2400003e-33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8756069232075175792, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8756069232075175792, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 3.3091951e+13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8756069232075175792, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 5.93e-43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
