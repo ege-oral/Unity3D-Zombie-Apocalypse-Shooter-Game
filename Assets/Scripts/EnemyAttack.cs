@@ -6,14 +6,14 @@ public class EnemyAttack : MonoBehaviour
 {
     PlayerHealth target;
     [SerializeField] float smackInAHead = 20f;
-    [SerializeField] Canvas canvas;
+    [SerializeField] GameObject takeDamageCanvas;
 
     PlayerHealth playerHealth;
 
     private void Awake() 
     {
         target = FindObjectOfType<PlayerHealth>();    
-        canvas.enabled = false;
+        takeDamageCanvas.SetActive(false);
     }
 
     public void AttackHitEvent()
@@ -25,8 +25,8 @@ public class EnemyAttack : MonoBehaviour
 
     IEnumerator DisplayTakeDamageCanvas()
     {
-        canvas.enabled = true;
+        takeDamageCanvas.SetActive(true);
         yield return new WaitForSeconds(.3f);
-        canvas.enabled = false;
+        takeDamageCanvas.SetActive(false);
     }
 }
