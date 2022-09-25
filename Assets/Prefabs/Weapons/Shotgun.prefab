@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33898383997488124}
   - component: {fileID: 23904141403194016}
   - component: {fileID: 5669320463643904092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   ammoSlot: {fileID: 0}
   ammoType: 0
   timeBetweenShots: 1
+  ammoText: {fileID: 0}
 --- !u!1 &1326079549577358
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ GameObject:
   - component: {fileID: 4819501579468060}
   - component: {fileID: 33459726747464850}
   - component: {fileID: 23948481808093384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +203,7 @@ GameObject:
   - component: {fileID: 4996469487512398}
   - component: {fileID: 33227245936506880}
   - component: {fileID: 23722440624247890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,6 +334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muzzle Flash
       objectReference: {fileID: 0}
+    - target: {fileID: 3360542172024696037, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 4
@@ -360,6 +365,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4243371153570508}
     m_Modifications:
+    - target: {fileID: 2983270892376220592, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4749552848369871018, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -407,6 +416,10 @@ PrefabInstance:
     - target: {fileID: 4754838360483497488, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
       propertyPath: m_Name
       value: Hit Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754838360483497488, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8756069232075175792, guid: 34bed3a763e3c304ead8ccd4172073ce, type: 3}
       propertyPath: m_BoundingSphereOverride.w
