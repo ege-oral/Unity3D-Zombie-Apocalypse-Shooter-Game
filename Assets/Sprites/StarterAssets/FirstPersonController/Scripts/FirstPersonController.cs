@@ -60,7 +60,7 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
-		private bool climb = false;
+		ClimbLadder climbLadder;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -95,6 +95,8 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+			climbLadder = FindObjectOfType<ClimbLadder>();
+			print(climbLadder.canClimb);
 		}
 
 		private void Start()
@@ -116,8 +118,11 @@ namespace StarterAssets
 		{
 			
 			GroundedCheck();
-			if(!climb)
+			if(climbLadder.canClimb)
 			{
+				Climb();
+			}
+			else{
 				JumpAndGravity();
 				Move();
 			}
@@ -275,31 +280,21 @@ namespace StarterAssets
 		}
 
 		// Added by egeo
-		private void OnTriggerStay(Collider other) 
+
+		private void Climb()
 		{
-			if(other.gameObject.tag == "Ladder")
+			Vector3 inputDirection = new Vector3(_input.move.x, _input.move.y, 0.0f).normalized;
+			// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
+			// if there is a move input rotate player when the player is moving
+			if (_input.move != Vector2.zero)
 			{
-				print("yey");
-				climb = true;
-				Vector3 inputDirection = new Vector3(_input.move.x, _input.move.y, 0.0f).normalized;
-
-				// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-				// if there is a move input rotate player when the player is moving
-				if (_input.move != Vector2.zero)
-				{
-					// move
-					inputDirection = transform.right * _input.move.x + transform.up * _input.move.y;
-				}
-
-				// move the player
-				_controller.Move(inputDirection.normalized * (2f * Time.deltaTime));
+				// move
+				inputDirection = transform.right * _input.move.x + transform.up * _input.move.y;
 			}
-		}
 
-		private void OnTriggerExit(Collider other) {
-			climb = false;
+			// move the player
+			_controller.Move(inputDirection.normalized * (2f * Time.deltaTime));
 		}
-
-		
+	
 	}
 }

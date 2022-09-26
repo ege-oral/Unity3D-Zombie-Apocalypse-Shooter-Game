@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class ClimbLadder : MonoBehaviour
 {
-    // private void OnControllerColliderHit(ControllerColliderHit hit) 
-    // {
-    //     if(hit.gameObject.tag == "Ladder" && Input.GetKey(KeyCode.W))
-    //     {
-    //         print("ege");
-    //     }
-    // }
+    public bool canClimb = false;
+   
+    private void OnTriggerEnter(Collider other) {
+ 
+        if(other.gameObject.tag == "Player Foot")
+        {
+            canClimb = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        
+        canClimb = false;
+    }
 }
