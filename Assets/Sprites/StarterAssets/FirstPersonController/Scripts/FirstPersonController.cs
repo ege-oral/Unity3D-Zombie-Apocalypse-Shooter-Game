@@ -60,6 +60,8 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
+		private bool climb = false;
+
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
@@ -112,9 +114,14 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
+			
 			GroundedCheck();
-			Move();
+			if(!climb)
+			{
+				JumpAndGravity();
+				Move();
+			}
+				
 		}
 
 		private void LateUpdate()
@@ -153,6 +160,7 @@ namespace StarterAssets
 
 		private void Move()
 		{
+		
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -196,6 +204,7 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+		
 		}
 
 		private void JumpAndGravity()
@@ -264,5 +273,33 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
+
+		// Added by egeo
+		private void OnTriggerStay(Collider other) 
+		{
+			if(other.gameObject.tag == "Ladder")
+			{
+				print("yey");
+				climb = true;
+				Vector3 inputDirection = new Vector3(_input.move.x, _input.move.y, 0.0f).normalized;
+
+				// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
+				// if there is a move input rotate player when the player is moving
+				if (_input.move != Vector2.zero)
+				{
+					// move
+					inputDirection = transform.right * _input.move.x + transform.up * _input.move.y;
+				}
+
+				// move the player
+				_controller.Move(inputDirection.normalized * (2f * Time.deltaTime));
+			}
+		}
+
+		private void OnTriggerExit(Collider other) {
+			climb = false;
+		}
+
+		
 	}
 }
