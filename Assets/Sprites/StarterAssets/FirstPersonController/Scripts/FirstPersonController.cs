@@ -60,7 +60,7 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
-		ClimbLadder climbLadder;
+		ClimbLadder[] climbLadder;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -95,8 +95,9 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
-			climbLadder = FindObjectOfType<ClimbLadder>();
-			print(climbLadder.canClimb);
+			climbLadder = FindObjectsOfType<ClimbLadder>();
+			print(climbLadder[0]);
+			print(climbLadder[1]);
 		}
 
 		private void Start()
@@ -118,7 +119,7 @@ namespace StarterAssets
 		{
 			
 			GroundedCheck();
-			if(climbLadder.canClimb)
+			if(climbLadder[0].canClimb || climbLadder[1].canClimb)
 			{
 				Climb();
 			}
