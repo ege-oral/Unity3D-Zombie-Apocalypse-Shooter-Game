@@ -282,7 +282,6 @@ namespace StarterAssets
 		}
 
 		// Added by egeo
-
 		private void CanClimbCheck()
 		{
 			foreach(ClimbLadder ladder in climbLadders)
