@@ -60,7 +60,8 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
-		ClimbLadder climbLadder;
+		ClimbLadder[] climbLadders;
+		private bool canClimb = false;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -95,8 +96,7 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
-			climbLadder = FindObjectOfType<ClimbLadder>();
-			print(climbLadder.canClimb);
+			
 		}
 
 		private void Start()
@@ -112,13 +112,15 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			climbLadders = FindObjectsOfType<ClimbLadder>();
 		}
 
 		private void Update()
 		{
-			
+
+			CanClimbCheck();	
 			GroundedCheck();
-			if(climbLadder.canClimb)
+			if(canClimb)
 			{
 				Climb();
 			}
@@ -280,6 +282,20 @@ namespace StarterAssets
 		}
 
 		// Added by egeo
+
+		private void CanClimbCheck()
+		{
+			foreach(ClimbLadder ladder in climbLadders)
+			{
+				print(ladder.canClimb);
+				if(ladder.canClimb == true)
+				{
+					canClimb = true;
+					return;
+				}
+			}
+			canClimb = false;
+		}
 
 		private void Climb()
 		{
