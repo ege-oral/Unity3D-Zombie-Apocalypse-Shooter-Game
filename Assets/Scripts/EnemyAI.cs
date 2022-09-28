@@ -17,18 +17,18 @@ public class EnemyAI : MonoBehaviour
 
     Animator animator;
 
-    private void Awake() {
+    private void Awake() 
+    {
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         distaneToTarget = Vector3.Distance(transform.position, target.position);
@@ -39,7 +39,6 @@ public class EnemyAI : MonoBehaviour
         else if(distaneToTarget <= chaseRange)
         {
             isProvoked = true;
-            //navMeshAgent.SetDestination(target.position);
         }
     }
 

@@ -286,7 +286,6 @@ namespace StarterAssets
 		{
 			foreach(ClimbLadder ladder in climbLadders)
 			{
-				print(ladder.canClimb);
 				if(ladder.canClimb == true)
 				{
 					canClimb = true;
