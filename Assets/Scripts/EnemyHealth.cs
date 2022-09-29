@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     NavMeshAgent navMeshAgent;
     EnemyAI enemyAI;
     CapsuleCollider capsuleCollider;
+    BoxCollider boxCollider;
 
     private void Start() 
     {
@@ -17,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();   
         enemyAI = GetComponent<EnemyAI>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     public void TakeDamage(float damage)
@@ -35,5 +37,6 @@ public class EnemyHealth : MonoBehaviour
         enemyAI.enabled = false;
         navMeshAgent.enabled = false;
         capsuleCollider.enabled = false;
+        boxCollider.enabled = false;
     }
 }

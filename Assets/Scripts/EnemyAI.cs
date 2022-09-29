@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/*
+    Problems: 
+    1- AdjustEnemyHeadBoxCollider function may not be 
+    the best approach here.
+*/
+
 public class EnemyAI : MonoBehaviour
 {
     
@@ -91,7 +97,10 @@ public class EnemyAI : MonoBehaviour
         isProvoked = true;
     }
 
-    
+    // In order the headshot the zombie we adjust the box collider position.
+    // We can't do it in animtaion window because the value keeps reset itself.
+    // I don't know why but most probably because of the zombie built-in animation.
+    // So we do it in here manually.
     public void AdjustEnemyHeadBoxCollider()
     {
         head.center = new Vector3(0.00034576f, 1.6324f, 0.26019f);
