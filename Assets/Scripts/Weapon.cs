@@ -8,13 +8,16 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
-    [SerializeField] float damage = 30f;
+    [SerializeField] float bodyDamage = 30f;
+    [SerializeField] float headDamage = 100f;
     [SerializeField] GameObject hitEffect;
     [SerializeField] ParticleSystem fireVFX;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] TextMeshProUGUI ammoText;
+
+
 
     bool canShoot = true;
 
@@ -47,13 +50,19 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
-            if(hit.transform.tag.Equals("Enemy"))
+            if(hit.collider is CapsuleCollider)
             {
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-                target.TakeDamage(damage);
+                target.TakeDamage(bodyDamage);
+                print("Body Shot");
             }
-            CreateHitImpact(hit);
-                
+            else if(hit.collider is BoxCollider)
+            {
+                EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+                target.TakeDamage(headDamage);
+                print("Head Shot");
+            }
+            CreateHitImpact(hit);   
         }
         else
         {

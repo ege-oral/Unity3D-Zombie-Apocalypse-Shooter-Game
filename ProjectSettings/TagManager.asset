@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Ladder
   - Player Foot
+  - Enemy Head
   layers:
   - Default
   - TransparentFX

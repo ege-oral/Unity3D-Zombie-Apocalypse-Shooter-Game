@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7041978908423603260}
   - component: {fileID: 7041978908423603261}
   - component: {fileID: 7041978908423603258}
+  - component: {fileID: 97710644700575955}
   - component: {fileID: 7041978908423603259}
   - component: {fileID: 7041978908423603256}
   - component: {fileID: 1624029166027326696}
@@ -31,8 +32,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7041978908423603257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0051856753, y: 0, z: -1.7198019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -101,9 +102,22 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.35
-  m_Height: 1.9
+  m_Height: 1.6036513
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.7518256, z: 0}
+--- !u!65 &97710644700575955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041978908423603257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17875805, y: 0.23750818, z: 0.22818673}
+  m_Center: {x: 0.0008262098, y: 1.6847513, z: 0.015683591}
 --- !u!195 &7041978908423603259
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -186,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smackInAHead: 20
-  canvas: {fileID: 0}
+  takeDamageCanvas: {fileID: 0}
 --- !u!1001 &2268896048085730782
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,8 +17,11 @@ public class EnemyAI : MonoBehaviour
 
     Animator animator;
 
+    BoxCollider head;
+
     private void Awake() 
     {
+        head = GetComponent<BoxCollider>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -61,6 +64,7 @@ public class EnemyAI : MonoBehaviour
     {
         animator.SetBool("attack", false);
         animator.SetTrigger("move");
+        AdjustEnemyHeadBoxCollider();
         navMeshAgent.SetDestination(target.position);
     }
 
@@ -88,5 +92,9 @@ public class EnemyAI : MonoBehaviour
     }
 
     
-
+    public void AdjustEnemyHeadBoxCollider()
+    {
+        head.center = new Vector3(0.00034576f, 1.6324f, 0.26019f);
+        head.size = new Vector3(0.1778f, 0.23078f, 0.22023f);
+    }
 }
