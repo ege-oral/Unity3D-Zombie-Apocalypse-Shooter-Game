@@ -15,7 +15,6 @@ public class WinTheGame : MonoBehaviour
         // If the canvas not enable.
         if(!winTheGameCanvas.isActiveAndEnabled) {
             winTheGameCanvas.enabled = true;
-            print("1");
         }
         
         if(Input.GetKey(KeyCode.E))
