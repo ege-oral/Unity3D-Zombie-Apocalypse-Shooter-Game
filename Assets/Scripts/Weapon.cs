@@ -50,18 +50,19 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
-            if(hit.collider is CapsuleCollider)
+            if(hit.collider is CapsuleCollider && hit.transform.gameObject.tag == "Enemy")
             {
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 target.TakeDamage(bodyDamage);
                 print("Body Shot");
             }
-            else if(hit.collider is BoxCollider)
+            else if(hit.collider is BoxCollider && hit.transform.gameObject.tag == "Enemy")
             {
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 target.TakeDamage(headDamage);
                 print("Head Shot");
             }
+
             CreateHitImpact(hit);   
         }
         else
