@@ -18,7 +18,7 @@ public class WinTheGame : MonoBehaviour
             print("1");
         }
         
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKey(KeyCode.E))
         {
             print("e was pressed");
         }
