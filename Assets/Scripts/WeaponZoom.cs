@@ -7,6 +7,8 @@ using StarterAssets;
 public class WeaponZoom : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera followCamera;
+    [SerializeField] Camera weaponCamera;
+
     [SerializeField] FirstPersonController firstPersonController;
     [SerializeField] float zoomedOutFOV = 40f;
     [SerializeField] float zoomedInFOV = 20f;
@@ -43,12 +45,14 @@ public class WeaponZoom : MonoBehaviour
     private void ZoomIn()
     {
         followCamera.m_Lens.FieldOfView = zoomedInFOV;
+        weaponCamera.fieldOfView = zoomedInFOV;
         firstPersonController.RotationSpeed = zoomedInSensitivity;
     }
 
     private void ZoomOut()
     {
         followCamera.m_Lens.FieldOfView = zoomedOutFOV;
+        weaponCamera.fieldOfView = zoomedOutFOV;
         firstPersonController.RotationSpeed = zoomedOutSensitivity;
     }
 }
