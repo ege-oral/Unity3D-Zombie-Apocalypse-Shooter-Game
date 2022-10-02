@@ -9,6 +9,7 @@ TagManager:
   - Ladder
   - Player Foot
   - Enemy Head
+  - Weapons
   layers:
   - Default
   - TransparentFX
