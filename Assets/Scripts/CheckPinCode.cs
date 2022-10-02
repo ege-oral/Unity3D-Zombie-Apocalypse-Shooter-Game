@@ -13,13 +13,13 @@ public class CheckPinCode : MonoBehaviour
 
     [SerializeField] Animator doorAnimator;
     [SerializeField] BoxCollider enterPinCollider;
-    Weapon playerWeapon;
+    GameObject weaponSwitcher;
 
 
-    void Awake()
+    void Start()
     {
         pinCode = GetComponentInChildren<TextMeshProUGUI>();
-        playerWeapon = FindObjectOfType<Weapon>();
+        weaponSwitcher = GameObject.FindGameObjectWithTag("Weapons");
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class CheckPinCode : MonoBehaviour
 
     public void AddDigitToPassword(string digit)
     {
-        if(passwordText == "TRY AGIN!")
+        if(passwordText == "TRY AGAIN!")
             passwordText = "";
 
         if(passwordText.Length < 4)
@@ -50,7 +50,7 @@ public class CheckPinCode : MonoBehaviour
         }
         else
         {
-            passwordText = "TRY AGIN!";
+            passwordText = "TRY AGAIN!";
         }
     }
 
@@ -60,7 +60,7 @@ public class CheckPinCode : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         enterPinCanvas.enabled = false;
         enterPinCollider.enabled = false;
-        playerWeapon.enabled = true;
+        weaponSwitcher.SetActive(true);
         doorAnimator.SetBool("Open", true);
     }
 

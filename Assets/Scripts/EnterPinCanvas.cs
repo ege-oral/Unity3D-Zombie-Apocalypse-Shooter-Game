@@ -5,23 +5,24 @@ using UnityEngine;
 public class EnterPinCanvas : MonoBehaviour
 {
     [SerializeField] Canvas enterPinCanvas;
-    Weapon playerWeapon;
+    GameObject weaponSwitcher;
 
     private void Start() 
     {
-        playerWeapon = FindObjectOfType<Weapon>();
+        weaponSwitcher = GameObject.FindGameObjectWithTag("Weapons");
         enterPinCanvas.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other) 
     {
-        playerWeapon.enabled = false;
+        weaponSwitcher.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         enterPinCanvas.enabled = true;
     }
 
     private void OnTriggerExit(Collider other) {
-        playerWeapon.enabled = true;
+        
+        weaponSwitcher.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         enterPinCanvas.enabled = false;
     }
