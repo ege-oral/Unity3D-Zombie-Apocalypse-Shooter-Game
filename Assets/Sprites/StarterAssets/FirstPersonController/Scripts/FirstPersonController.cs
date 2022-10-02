@@ -313,11 +313,12 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (2f * Time.deltaTime));
+			playerAudioSource.enabled = false;
 		}
 
 		private void PlayerFootstep()
 		{
-			if(_input.move != Vector2.zero && Grounded)
+			if(_input.move != Vector2.zero && Grounded && !canClimb)
 			{
 				playerAudioSource.enabled = true;
 				if(_input.sprint)
@@ -335,6 +336,5 @@ namespace StarterAssets
 				playerAudioSource.enabled = false;
 			}
 		}
-
 	}
 }
