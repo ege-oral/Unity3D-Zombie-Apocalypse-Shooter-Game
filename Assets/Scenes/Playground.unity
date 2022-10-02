@@ -35644,11 +35644,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1901406927, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: angleDecay
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901406927, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: lightDecay
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 135756641613574983, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: playerHealthText
@@ -35723,8 +35723,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6629091431945501169, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629091431945501169, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Intensity
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7649487083991334704, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x

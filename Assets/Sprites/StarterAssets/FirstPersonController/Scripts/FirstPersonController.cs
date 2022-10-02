@@ -60,8 +60,11 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
+		// Added by egeol
 		ClimbLadder[] climbLadders;
 		private bool canClimb = false;
+		AudioSource playerAudioSource;
+
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -113,6 +116,7 @@ namespace StarterAssets
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 			climbLadders = FindObjectsOfType<ClimbLadder>();
+			playerAudioSource = GetComponent<AudioSource>();
 		}
 
 		private void Update()
@@ -127,6 +131,7 @@ namespace StarterAssets
 			else{
 				JumpAndGravity();
 				Move();
+				PlayerFootstep();
 			}
 				
 		}
@@ -309,6 +314,27 @@ namespace StarterAssets
 			// move the player
 			_controller.Move(inputDirection.normalized * (2f * Time.deltaTime));
 		}
-	
+
+		private void PlayerFootstep()
+		{
+			if(_input.move != Vector2.zero && Grounded)
+			{
+				playerAudioSource.enabled = true;
+				if(_input.sprint)
+				{
+					playerAudioSource.pitch = 2f;
+				}
+				else
+				{
+					playerAudioSource.pitch = 1f;
+				}
+			}
+			else
+			{
+				playerAudioSource.pitch = 1f;
+				playerAudioSource.enabled = false;
+			}
+		}
+
 	}
 }
