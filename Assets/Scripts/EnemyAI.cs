@@ -12,18 +12,19 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     
-    [SerializeField] float chaseRange = 5f;
-    [SerializeField] float turnSpeed = 5f;
-
     Transform target;
     NavMeshAgent navMeshAgent;
-    float distaneToTarget = Mathf.Infinity;
+    Animator animator;
+    BoxCollider head;
 
+    [SerializeField] float chaseRange = 5f;
+    [SerializeField] float turnSpeed = 5f;
+    float distaneToTarget = Mathf.Infinity;
     bool isProvoked = false;
 
-    Animator animator;
-
-    BoxCollider head;
+    AudioSource enemyAudioSource;
+    [SerializeField] AudioClip zombieAttackAudioClip;
+    bool isZombieInIdleMode = true;
 
     private void Awake() 
     {
@@ -35,6 +36,7 @@ public class EnemyAI : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        enemyAudioSource = GetComponent<AudioSource>();
     }
 
 
@@ -54,6 +56,13 @@ public class EnemyAI : MonoBehaviour
     private void EngageTarget()
     {
         FaceTarget();
+        // Changin zombies auido clip to attack mode.
+        if(isZombieInIdleMode)
+        {
+            ChangeAuidoToAttack();
+            isZombieInIdleMode = false;
+        }
+
         if(distaneToTarget >= navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
@@ -76,6 +85,7 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
+        
         animator.SetBool("attack", true);
     }
 
@@ -105,5 +115,13 @@ public class EnemyAI : MonoBehaviour
     {
         head.center = new Vector3(0.00034576f, 1.6324f, 0.26019f);
         head.size = new Vector3(0.1778f, 0.23078f, 0.22023f);
+    }
+
+    private void ChangeAuidoToAttack()
+    {
+        enemyAudioSource.clip = zombieAttackAudioClip;
+        enemyAudioSource.volume = 0.6f;
+        enemyAudioSource.pitch = 1.1f;
+        enemyAudioSource.Play();
     }
 }

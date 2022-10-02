@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     EnemyAI enemyAI;
     CapsuleCollider capsuleCollider;
     BoxCollider boxCollider;
+    AudioSource enemyAudioSource;
+    
 
     private void Start() 
     {
@@ -19,12 +21,14 @@ public class EnemyHealth : MonoBehaviour
         enemyAI = GetComponent<EnemyAI>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         boxCollider = GetComponent<BoxCollider>();
+        enemyAudioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(float damage)
     {
         BroadcastMessage("OnDamageTaken");
         hitPoints -= damage;
+        // Switch enemy idle audio to attack audio.
         if(hitPoints <= 0)
         {
             Die();
@@ -38,5 +42,6 @@ public class EnemyHealth : MonoBehaviour
         navMeshAgent.enabled = false;
         capsuleCollider.enabled = false;
         boxCollider.enabled = false;
+        enemyAudioSource.enabled = false;
     }
 }
