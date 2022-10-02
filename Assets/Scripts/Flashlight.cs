@@ -14,13 +14,17 @@ public class Flashlight : MonoBehaviour
     private void Start() 
     {
         myLight = GetComponent<Light>();
-    
     }
 
     private void Update() 
     {
-        DecreaseLightIntensity();
-        DecreaseLightAngle();
+        // Is light on ?
+        if(myLight.isActiveAndEnabled)
+        {
+            DecreaseLightIntensity();
+            DecreaseLightAngle();
+        }
+        ToggleFlashLight();
     }
 
     public void RestoreLightIntensity(float intensityAmount)
@@ -46,5 +50,13 @@ public class Flashlight : MonoBehaviour
             return; 
         }
         myLight.spotAngle -= angleDecay * Time.deltaTime;
+    }
+
+    private void ToggleFlashLight()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            myLight.enabled = !myLight.isActiveAndEnabled; 
+        }
     }
 }
