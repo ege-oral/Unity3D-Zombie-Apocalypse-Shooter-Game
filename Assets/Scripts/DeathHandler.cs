@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeathHandler : MonoBehaviour
 {
     [SerializeField] Canvas gameOverCanvas;
+    [SerializeField] GameObject weapons;
 
     private void Start() 
     {
@@ -13,13 +14,13 @@ public class DeathHandler : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-
+    // TO DO fix bug that remove light when player dies.
     public void HandleDeath()
     {
         gameOverCanvas.enabled = true;
         Time.timeScale = 0;
-        FindObjectOfType<WeaponSwitcher>().enabled = false;
-
+        weapons.SetActive(false);
+        
         // Free the cursor if player dies.
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

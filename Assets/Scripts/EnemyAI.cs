@@ -113,8 +113,8 @@ public class EnemyAI : MonoBehaviour
     // So we do it in here manually.
     public void AdjustEnemyHeadBoxCollider()
     {
-        head.center = new Vector3(0.00034576f, 1.6324f, 0.26019f);
-        head.size = new Vector3(0.1778f, 0.23078f, 0.22023f);
+        head.center = new Vector3(0.0003457f, 1.571465f, 0.26019f);
+        head.size = new Vector3(0.1778f, 0.2930298f, 0.22023f);
     }
 
     private void ChangeAuidoToAttack()
