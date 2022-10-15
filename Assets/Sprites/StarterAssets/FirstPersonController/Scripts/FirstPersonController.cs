@@ -60,10 +60,15 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
-		// Added by egeol
+		// Added by egeo
 		ClimbLadder[] climbLadders;
-		private bool canClimb = false;
 		AudioSource playerAudioSource;
+
+		// Added by egeo
+		[Header("Audio")]
+		[SerializeField] float audioPitchWalking = 0.8f;
+		[SerializeField] float audioPitchRunning = 1.3f;
+		private bool canClimb = false;
 
 
 		// timeout deltatime
@@ -323,16 +328,16 @@ namespace StarterAssets
 				playerAudioSource.enabled = true;
 				if(_input.sprint)
 				{
-					playerAudioSource.pitch = 2f;
+					playerAudioSource.pitch = audioPitchRunning;
 				}
 				else
 				{
-					playerAudioSource.pitch = 1f;
+					playerAudioSource.pitch = audioPitchWalking;
 				}
 			}
 			else
 			{
-				playerAudioSource.pitch = 1f;
+				playerAudioSource.pitch = audioPitchWalking;
 				playerAudioSource.enabled = false;
 			}
 		}
