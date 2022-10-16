@@ -37,6 +37,7 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         enemyAudioSource = GetComponent<AudioSource>();
+        StartCoroutine(RandomisePlayIdleAudio());
     }
 
 
@@ -55,7 +56,6 @@ public class EnemyAI : MonoBehaviour
 
     private void EngageTarget()
     {
-        FaceTarget();
         // Changin zombies auido clip to attack mode.
         if(isZombieInIdleMode)
         {
@@ -85,10 +85,10 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
-        
         animator.SetBool("attack", true);
     }
 
+    // In case of any future use.
     private void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
@@ -122,6 +122,13 @@ public class EnemyAI : MonoBehaviour
         enemyAudioSource.clip = zombieAttackAudioClip;
         enemyAudioSource.volume = 0.6f;
         enemyAudioSource.pitch = 1.1f;
+        enemyAudioSource.Play();
+    }
+
+    // Randomize idle sound start time, for every character.
+    IEnumerator RandomisePlayIdleAudio()
+    {
+        yield return new WaitForSeconds(Random.Range(0f, 3f));
         enemyAudioSource.Play();
     }
 }
