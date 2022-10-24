@@ -7,10 +7,11 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
     Animator animator;
-
+    EnemyAttack enemyAttack;
     private void Start() 
     {
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+        enemyAttack = GetComponent<EnemyAttack>(); 
     }
 
     public void TakeDamage(float damage)
@@ -27,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         animator.SetTrigger("die");
-
+        enemyAttack.takeDamageCanvas.SetActive(false);
         Component[] components = gameObject.GetComponents(typeof(Component));
         foreach(Component c in components)
         {

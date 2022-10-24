@@ -6,7 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
     PlayerHealth target;
     [SerializeField] float smackInAHead = 20f;
-    [SerializeField] GameObject takeDamageCanvas;
+    [SerializeField] public GameObject takeDamageCanvas;
 
     PlayerHealth playerHealth;
 

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d26262da96ddb04289a6562c864b6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeRange: 2
+  closeRange: 4
   turnSpeed: 7
   zombieAttackAudioClip: {fileID: 8300000, guid: 57dc927b753a83749a7b75694e746071, type: 3}
   enemyEyes: {fileID: 1273998981559460413}

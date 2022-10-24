@@ -10857,7 +10857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1466753457897893876, guid: c78c3e5fc52b52f469322b7cb45dc4d0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1466753457897893876, guid: c78c3e5fc52b52f469322b7cb45dc4d0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13325,7 +13325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5203316610860077159, guid: c78c3e5fc52b52f469322b7cb45dc4d0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203316610860077159, guid: c78c3e5fc52b52f469322b7cb45dc4d0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13413,7 +13413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5203316611314344345, guid: c78c3e5fc52b52f469322b7cb45dc4d0, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203316611314344345, guid: c78c3e5fc52b52f469322b7cb45dc4d0, type: 3}
       propertyPath: m_NavMeshLayer
@@ -50070,6 +50070,14 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 226150369}
+    - target: {fileID: 3960957870194614100, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: far clip plane
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960957870194614100, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3960957870194614101, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -50081,6 +50089,10 @@ PrefabInstance:
     - target: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225640760722257021, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Lens.FarClipPlane
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
@@ -50230,6 +50242,14 @@ PrefabInstance:
     - target: {fileID: 5885782563159520793, guid: 141b18fc7e3b946448e7221fdbe6183a, type: 3}
       propertyPath: m_Name
       value: Take Damage Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885782564538666907, guid: 141b18fc7e3b946448e7221fdbe6183a, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885782564538666907, guid: 141b18fc7e3b946448e7221fdbe6183a, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 141b18fc7e3b946448e7221fdbe6183a, type: 3}
