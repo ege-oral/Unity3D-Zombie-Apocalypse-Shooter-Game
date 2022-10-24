@@ -12,7 +12,10 @@ public class EnemyAttack : MonoBehaviour
 
     private void Awake() 
     {
-        target = FindObjectOfType<PlayerHealth>();    
+        target = FindObjectOfType<PlayerHealth>();
+    }
+    private void Start() 
+    {
         takeDamageCanvas.SetActive(false);
     }
 

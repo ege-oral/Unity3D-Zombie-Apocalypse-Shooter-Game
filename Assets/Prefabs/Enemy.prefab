@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 1624029166027326696}
   - component: {fileID: 2878978258896366780}
   - component: {fileID: 244437164}
+  - component: {fileID: 435792349}
   - component: {fileID: 2857976384907219674}
   m_Layer: 0
   m_Name: Enemy
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d26262da96ddb04289a6562c864b6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRange: 10
+  closeRange: 2
   turnSpeed: 5
   zombieAttackAudioClip: {fileID: 8300000, guid: 57dc927b753a83749a7b75694e746071, type: 3}
   enemyEyes: {fileID: 1273998981559460413}
@@ -236,6 +237,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smackInAHead: 20
   takeDamageCanvas: {fileID: 0}
+--- !u!114 &435792349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041978908423603257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc0621a6bd85a848baee88888566ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 10
+  angle: 150
+  playerRef: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  enemyEyes: {fileID: 1273998981559460413}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  obstaclesMask:
+    serializedVersion: 2
+    m_Bits: 512
+  canSeePlayer: 0
 --- !u!82 &2857976384907219674
 AudioSource:
   m_ObjectHideFlags: 0

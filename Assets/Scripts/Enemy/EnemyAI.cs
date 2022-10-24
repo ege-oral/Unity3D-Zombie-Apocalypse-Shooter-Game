@@ -12,12 +12,13 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     
-    Transform target;
-    NavMeshAgent navMeshAgent;
     Animator animator;
+    Transform target;
     BoxCollider head;
+    NavMeshAgent navMeshAgent;
+    EnemyFieldOfView enemyFieldOfView;
 
-    [SerializeField] float chaseRange = 5f;
+    [SerializeField] float closeRange = 5f;
     [SerializeField] float turnSpeed = 5f;
     float distaneToTarget = Mathf.Infinity;
     bool isProvoked = false;
@@ -27,12 +28,12 @@ public class EnemyAI : MonoBehaviour
     bool isZombieInIdleMode = true;
 
     [SerializeField] GameObject enemyEyes;
-    private NavMeshHit navMeshHit;
-    private bool blocked = false;
+
 
     private void Awake() 
     {
         head = GetComponent<BoxCollider>();
+        enemyFieldOfView = GetComponent<EnemyFieldOfView>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -47,13 +48,12 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        //EnemySight();
         distaneToTarget = Vector3.Distance(transform.position, target.position);
         if(isProvoked)
         {
             EngageTarget();
         }
-        else if(distaneToTarget <= chaseRange)
+        else if(enemyFieldOfView.canSeePlayer || distaneToTarget <= closeRange)
         {
             isProvoked = true;
         }
@@ -71,6 +71,10 @@ public class EnemyAI : MonoBehaviour
         if(distaneToTarget >= navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
+            if(enemyFieldOfView.canSeePlayer)
+            {
+                FaceTarget();
+            }
         }
 
         if(distaneToTarget <= navMeshAgent.stoppingDistance)
@@ -104,7 +108,7 @@ public class EnemyAI : MonoBehaviour
     private void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, chaseRange);
+        Gizmos.DrawWireSphere(transform.position, closeRange);
     }
 
     public void OnDamageTaken()
@@ -135,22 +139,5 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(0f, 3f));
         enemyAudioSource.Play();
-    }
-
-    // Here for testing purposes.
-    private void EnemySight()
-    {
-
-        Vector3 noAngle = enemyEyes.transform.forward;
-        Quaternion spreadAngle = Quaternion.AngleAxis(-15f, new Vector3(0,1,0));
-        Vector3 newVector = spreadAngle * noAngle;
-
-        Ray ray = new Ray(enemyEyes.transform.position, newVector);
-
-        blocked = NavMesh.Raycast(enemyEyes.transform.position, target.position, out navMeshHit, NavMesh.AllAreas);
-        //Debug.DrawLine(enemyEyes.transform.position, target.position, blocked ? Color.red : Color.green);
-        Debug.DrawLine(enemyEyes.transform.position, -Vector3.forward, Color.cyan);
-        if (blocked)
-            Debug.DrawRay(navMeshHit.position, Vector3.up, Color.red);
     }
 }

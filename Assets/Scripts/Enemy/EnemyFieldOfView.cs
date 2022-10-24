@@ -14,7 +14,7 @@ public class EnemyFieldOfView : MonoBehaviour
     [SerializeField] public LayerMask targetMask;
     public LayerMask obstaclesMask;
 
-    public bool canSeePlayer;
+    public bool canSeePlayer = false;
 
     private void Start() 
     {
@@ -36,12 +36,11 @@ public class EnemyFieldOfView : MonoBehaviour
     private void FiledOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(enemyEyes.transform.position, radius, targetMask);
-
+        
         if(rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - enemyEyes.transform.position).normalized;
-
             if(Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
             {
                 float distanceToTarget = Vector3.Distance(enemyEyes.transform.position, target.position);
