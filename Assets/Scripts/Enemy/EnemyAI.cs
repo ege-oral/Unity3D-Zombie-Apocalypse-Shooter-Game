@@ -70,11 +70,11 @@ public class EnemyAI : MonoBehaviour
 
         if(distaneToTarget >= navMeshAgent.stoppingDistance)
         {
-            ChaseTarget();
             if(enemyFieldOfView.canSeePlayer)
             {
                 FaceTarget();
             }
+            ChaseTarget();
         }
 
         if(distaneToTarget <= navMeshAgent.stoppingDistance)
