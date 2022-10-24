@@ -26,6 +26,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] AudioClip zombieAttackAudioClip;
     bool isZombieInIdleMode = true;
 
+    [SerializeField] GameObject enemyEyes;
+    private NavMeshHit navMeshHit;
+    private bool blocked = false;
+
     private void Awake() 
     {
         head = GetComponent<BoxCollider>();
@@ -43,6 +47,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        //EnemySight();
         distaneToTarget = Vector3.Distance(transform.position, target.position);
         if(isProvoked)
         {
@@ -130,5 +135,22 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(0f, 3f));
         enemyAudioSource.Play();
+    }
+
+    // Here for testing purposes.
+    private void EnemySight()
+    {
+
+        Vector3 noAngle = enemyEyes.transform.forward;
+        Quaternion spreadAngle = Quaternion.AngleAxis(-15f, new Vector3(0,1,0));
+        Vector3 newVector = spreadAngle * noAngle;
+
+        Ray ray = new Ray(enemyEyes.transform.position, newVector);
+
+        blocked = NavMesh.Raycast(enemyEyes.transform.position, target.position, out navMeshHit, NavMesh.AllAreas);
+        //Debug.DrawLine(enemyEyes.transform.position, target.position, blocked ? Color.red : Color.green);
+        Debug.DrawLine(enemyEyes.transform.position, -Vector3.forward, Color.cyan);
+        if (blocked)
+            Debug.DrawRay(navMeshHit.position, Vector3.up, Color.red);
     }
 }

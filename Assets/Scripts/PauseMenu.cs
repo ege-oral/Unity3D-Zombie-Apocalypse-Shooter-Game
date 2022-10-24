@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1f;
+        AudioListener.pause = false;
         pauseMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         starterAssetsInputs.cursorInputForLook = true;
@@ -50,6 +51,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0f;
+        AudioListener.pause = true;
         pauseMenuUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         starterAssetsInputs.look = new Vector2(0f,0f);  // Prevent spin the camera.
