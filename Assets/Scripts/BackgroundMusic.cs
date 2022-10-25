@@ -16,6 +16,7 @@ public class BackgroundMusic : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name == "Game")
         {
+            // First background music object.
             backgroundMusicObjects[0].GetComponent<AudioSource>().volume = 0.3f;
         }
     }

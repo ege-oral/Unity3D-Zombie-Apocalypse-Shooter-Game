@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject pauseMenuUI;
     Weapon[] weapons;
+    Flashlight flashlight;
     Camera mainCamera;
     StarterAssetsInputs starterAssetsInputs;
 
@@ -18,6 +19,7 @@ public class PauseMenu : MonoBehaviour
         weapons = FindObjectsOfType<Weapon>();
         mainCamera = Camera.main;
         starterAssetsInputs = FindObjectOfType<StarterAssetsInputs>();
+        flashlight = FindObjectOfType<Flashlight>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         starterAssetsInputs.cursorInputForLook = true;
+        flashlight.enabled = true;
         EnableAllWeapons();
         pause = true;
     }
@@ -56,6 +59,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         starterAssetsInputs.look = new Vector2(0f,0f);  // Prevent spin the camera.
         starterAssetsInputs.cursorInputForLook = false;
+        flashlight.enabled = false;
         DisableAllWeapons();
         pause = false;
     }

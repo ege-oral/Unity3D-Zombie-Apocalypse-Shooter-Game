@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinTheGame : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class WinTheGame : MonoBehaviour
         
         if(Input.GetKey(KeyCode.E))
         {
-            print("e was pressed");
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("End Screen");
         }
     }
 

@@ -11,13 +11,12 @@ public class SceneLoader : MonoBehaviour
 
     public void PlayGame()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        StartCoroutine(LoadAsynchronously(currentSceneIndex + 1));
+        StartCoroutine(LoadAsynchronously("Game"));
     }
 
-    IEnumerator LoadAsynchronously(int sceneIndex)
+    IEnumerator LoadAsynchronously(string sceneName)
     {
-        AsyncOperation operation =  SceneManager.LoadSceneAsync(sceneIndex);
+        AsyncOperation operation =  SceneManager.LoadSceneAsync(sceneName);
         loadingScreen.SetActive(true);
 
         while(!operation.isDone)
