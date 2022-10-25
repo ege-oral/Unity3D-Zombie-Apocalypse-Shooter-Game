@@ -11,6 +11,7 @@ TagManager:
   - Enemy Head
   - Weapons
   - Take Damage Canvas
+  - Background Music
   layers:
   - Default
   - TransparentFX
