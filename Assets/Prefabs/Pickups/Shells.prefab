@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723bd9dd2025c0244aaf774c2cace07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 5
+  ammoAmount: 2
   ammoType: 1
 --- !u!1 &7154370694567274234
 GameObject:

@@ -105,7 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
   range: 35
-  damage: 30
+  bodyDamage: 50
+  headDamage: 100
   hitEffect: {fileID: 3793315183827100019}
   fireVFX: {fileID: 8756642488371977500}
   ammoSlot: {fileID: 0}
