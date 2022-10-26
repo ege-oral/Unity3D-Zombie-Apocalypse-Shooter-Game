@@ -13,3 +13,7 @@ Zombie Apocalypse Shooter Horror Game. Your flashlight is running out, you need 
 - Player can jump with the 'space' key.
 - Player can pause the game and open the pause menu, with the 'escape' key.
 
+# Screenshots
+![image](https://user-images.githubusercontent.com/45359225/197995693-3de36064-d217-4efb-be62-7deb5c285082.png)
+![image](https://user-images.githubusercontent.com/45359225/197993746-ce3f3fff-7707-497e-b5b3-bbfa8dd724aa.png)
+![image](https://user-images.githubusercontent.com/45359225/197993894-4e6a8d0d-caf4-4cc1-97e9-0b9958344622.png)
