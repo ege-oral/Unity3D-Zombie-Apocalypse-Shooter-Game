@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
-    [SerializeField] float lightDecay = 0.1f;
-    [SerializeField] float angleDecay = 0.8f;
+    [SerializeField] float lightDecay = 0.01f;
+    [SerializeField] float minimumLight = 0.8f;
+
+    [SerializeField] float angleDecay = 1;
     [SerializeField] float minimumAngle = 30f;
 
     Light myLight;
@@ -34,6 +36,11 @@ public class Flashlight : MonoBehaviour
 
     private void DecreaseLightIntensity()
     {
+        if(myLight.intensity <= minimumLight)
+        {
+            myLight.intensity = minimumLight;
+            return;
+        }
         myLight.intensity -= lightDecay * Time.deltaTime;
     }
 

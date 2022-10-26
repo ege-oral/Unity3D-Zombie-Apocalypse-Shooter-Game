@@ -51292,6 +51292,10 @@ PrefabInstance:
       propertyPath: m_Lens.FarClipPlane
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 6629091431945501169, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Intensity
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 1025

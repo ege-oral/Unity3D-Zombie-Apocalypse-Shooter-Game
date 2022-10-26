@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8a645f6745e2f44baea531847d9525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityAmount: 1.5
+  intensityAmount: 2.5
   angleAmount: 40
 --- !u!135 &3430968179335895746
 SphereCollider:

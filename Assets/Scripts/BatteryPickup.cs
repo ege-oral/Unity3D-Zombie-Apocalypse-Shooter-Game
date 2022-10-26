@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BatteryPickup : MonoBehaviour
 {
-    [SerializeField] float intensityAmount = 1.5f;
+    [SerializeField] float intensityAmount = 2.5f;
     [SerializeField] float angleAmount = 40f;
 
     Flashlight flashlight;
