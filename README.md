@@ -1,5 +1,5 @@
 # Unity3D-Zombie-Apocalypse-Shooter-Game
-### There is a copy of this game in the Releases section!!
+### There is a copy of this game in the Releases section!
 
 Zombie Apocalypse Shooter Horror Game. Your flashlight is running out, you need to find battery. Your goal is to find messages and passcodes to get help.
 
